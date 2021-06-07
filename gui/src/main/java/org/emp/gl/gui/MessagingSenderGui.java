@@ -5,7 +5,15 @@
  */
 package org.emp.gl.gui;
 
+import org.emp.gl.authenticity.implementations.SignatureRSA;
+import org.emp.gl.confidentiality.implementations.RSA;
 import org.emp.gl.core.lookup.Lookup;
+import org.emp.gl.filtre.implementations.NoSpace;
+import org.emp.gl.filtre.implementations.NoSpecialCharacter;
+import org.emp.gl.filtre.implementations.UpperCase;
+import org.emp.gl.integrity.implementations.Length;
+import org.emp.gl.integrity.implementations.MD5;
+import org.emp.gl.integrity.implementations.SHA;
 import org.emp.gl.messages.BaseMessageAdapter;
 import org.emp.gl.messages.IMessage;
 import org.emp.gl.sender.service.MessagingService;
@@ -147,6 +155,8 @@ public class MessagingSenderGui extends javax.swing.JFrame {
         message.setTitle(objectField.getText());
         message.setMessage(messageField.getText());
         message.setSender(userField.getText());
+        
+        message=new RSA(new  SignatureRSA(new UpperCase(new   NoSpace(message))));
                
         MessagingService ms = Lookup.getInstance().getService(MessagingService.class);
         ms.sendMessage(destinationField.getText(), message.toString());

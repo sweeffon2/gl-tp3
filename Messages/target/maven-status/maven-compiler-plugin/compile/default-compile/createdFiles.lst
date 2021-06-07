@@ -1,0 +1,7 @@
+org/emp/gl/messages/Integrity.class
+org/emp/gl/messages/BaseMessageAdapter.class
+org/emp/gl/messages/Authenticity.class
+org/emp/gl/messages/Filtre.class
+org/emp/gl/messages/IMessage.class
+org/emp/gl/messages/Decor.class
+org/emp/gl/messages/Confidentiality.class

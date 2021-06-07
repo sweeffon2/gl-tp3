@@ -14,5 +14,9 @@
         <module>sender-service</module>
         <module>sender-service-impl</module>
         <module>Messages</module>
+        <module>filtre-implementations</module>
+        <module>confidentiality-implementations</module>
+        <module>integrity-implementations</module>
+        <module>authenticity-implementations</module>
     </modules>
 </project>
