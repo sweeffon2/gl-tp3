@@ -8,6 +8,7 @@ package org.emp.gl.gui;
 import java.beans.PropertyChangeEvent;
 import java.util.stream.Stream;
 import org.emp.gl.core.lookup.Lookup;
+import org.emp.gl.messages.IMessage;
 import org.emp.gl.sender.service.MessagingService;
 import org.emp.gl.sender.service.MessagingServiceListener;
 
@@ -59,12 +60,16 @@ public class MessagingReceiverGui extends javax.swing.JFrame implements Messagin
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        IMessage rcvd;
+        rcvd = (IMessage)evt.getNewValue();
+        System.out.println(rcvd.getMessage());
+        
                 
         stringBuilder
                 .append("\n")
                 .append("------- new message -------")
                 .append("\n")
-                .append(evt.getNewValue())
+                .append(rcvd.toString())
                 .append("\n")
                 .append("------- message end -------")
                 .append("\n");

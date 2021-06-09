@@ -248,81 +248,51 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="UpperCase"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="upperCaseActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="lowerCase">
       <Properties>
         <Property name="text" type="java.lang.String" value="LowerCase"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lowerCaseActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="noSpace">
       <Properties>
         <Property name="text" type="java.lang.String" value="NoSpace"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noSpaceActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="noSpecialCharacters">
       <Properties>
         <Property name="text" type="java.lang.String" value="NoSpecialChars"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noSpecialCharactersActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="md5">
       <Properties>
         <Property name="text" type="java.lang.String" value="MD5"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="md5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="sha">
       <Properties>
         <Property name="text" type="java.lang.String" value="SHA"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="shaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="length">
       <Properties>
         <Property name="text" type="java.lang.String" value="Length"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lengthActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="signatureRSA">
       <Properties>
         <Property name="text" type="java.lang.String" value="SignatureRSA"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signatureRSAActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="shift">
       <Properties>
         <Property name="text" type="java.lang.String" value="Shift"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="shiftActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="rsa">
       <Properties>
         <Property name="text" type="java.lang.String" value="RSA"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rsaActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

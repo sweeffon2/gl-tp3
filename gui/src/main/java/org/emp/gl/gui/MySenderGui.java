@@ -28,7 +28,6 @@ import org.emp.gl.sender.service.MessagingService;
 public class MySenderGui extends javax.swing.JFrame {
     
     private final String senderId;
-    private boolean[] internal_state={false,false,false,false,false,false,false,false,false,false};
     IMessage message;
     /**
      * Creates new form MySenderGui
@@ -45,44 +44,44 @@ public class MySenderGui extends javax.swing.JFrame {
     private void applyDecorations(){
         message.setMessage(messageInput.getText());
         
-           if(internal_state[0]){
+           if(upperCase.isSelected()){
              message=new UpperCase(message);
            }
-
-           if(internal_state[1]){
+           
+           if(lowerCase.isSelected()){
              message=new LowerCase(message);
            }
 
-           if(internal_state[2]){
+           if(noSpace.isSelected()){
               message=new NoSpace(message);
            }
 
-           if(internal_state[3]){
+           if(noSpecialCharacters.isSelected()){
               message=new NoSpecialCharacter(message);
            }
 
-           if(internal_state[4]){
+           if(md5.isSelected()){
                message=new MD5(message);
            }
 
-           if(internal_state[5]){
+           if(rsa.isSelected()){
                 message=new RSA(message);
            }
 
-           if(internal_state[6]){
+           if(shift.isSelected()){
                 message=new Shift(message,5);
            }
 
-           if(internal_state[7]){
+           if(sha.isSelected()){
                message=new SHA(message);
            }
 
-           if(internal_state[8]){
+           if(length.isSelected()){
                 message=new Length(message);
            }
 
 
-           if(internal_state[9]){
+           if(signatureRSA.isSelected()){
                 message=new SignatureRSA(message);
            }
     }
@@ -191,7 +190,7 @@ public class MySenderGui extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Select Decor");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         sendBtn.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         sendBtn.setForeground(new java.awt.Color(25, 182, 19));
@@ -203,74 +202,24 @@ public class MySenderGui extends javax.swing.JFrame {
         });
 
         upperCase.setText("UpperCase");
-        upperCase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upperCaseActionPerformed(evt);
-            }
-        });
 
         lowerCase.setText("LowerCase");
-        lowerCase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lowerCaseActionPerformed(evt);
-            }
-        });
 
         noSpace.setText("NoSpace");
-        noSpace.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noSpaceActionPerformed(evt);
-            }
-        });
 
         noSpecialCharacters.setText("NoSpecialChars");
-        noSpecialCharacters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noSpecialCharactersActionPerformed(evt);
-            }
-        });
 
         md5.setText("MD5");
-        md5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                md5ActionPerformed(evt);
-            }
-        });
 
         sha.setText("SHA");
-        sha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shaActionPerformed(evt);
-            }
-        });
 
         length.setText("Length");
-        length.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lengthActionPerformed(evt);
-            }
-        });
 
         signatureRSA.setText("SignatureRSA");
-        signatureRSA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signatureRSAActionPerformed(evt);
-            }
-        });
 
         shift.setText("Shift");
-        shift.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shiftActionPerformed(evt);
-            }
-        });
 
         rsa.setText("RSA");
-        rsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rsaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -346,60 +295,9 @@ public class MySenderGui extends javax.swing.JFrame {
         message.setSender(senderInput.getText());
         applyDecorations();
         MessagingService ms = Lookup.getInstance().getService(MessagingService.class);
-        ms.sendMessage(receiverInput.getText(), message.toString());
-        message.setMessage("");
-        messageInput.setText("");
+        ms.sendMessage(receiverInput.getText(), message);
+        message = new BaseMessageAdapter();
     }//GEN-LAST:event_sendBtnActionPerformed
-
-    private void upperCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upperCaseActionPerformed
-        // TODO add your handling code here:
-        internal_state[0]=!internal_state[0];
-    }//GEN-LAST:event_upperCaseActionPerformed
-
-    private void lowerCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lowerCaseActionPerformed
-        // TODO add your handling code here:
-         internal_state[1]=!internal_state[1];
-    }//GEN-LAST:event_lowerCaseActionPerformed
-
-    private void noSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSpaceActionPerformed
-        // TODO add your handling code here:
-         internal_state[2]=!internal_state[2];
-    }//GEN-LAST:event_noSpaceActionPerformed
-
-    private void noSpecialCharactersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSpecialCharactersActionPerformed
-        // TODO add your handling code here:
-         internal_state[3]=!internal_state[3];
-    }//GEN-LAST:event_noSpecialCharactersActionPerformed
-
-    private void md5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_md5ActionPerformed
-        // TODO add your handling code here:
-         internal_state[4]=!internal_state[4];
-    }//GEN-LAST:event_md5ActionPerformed
-
-    private void shaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shaActionPerformed
-        // TODO add your handling code here:
-         internal_state[7]=!internal_state[7];
-    }//GEN-LAST:event_shaActionPerformed
-
-    private void lengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthActionPerformed
-        // TODO add your handling code here:
-         internal_state[8]=!internal_state[8];
-    }//GEN-LAST:event_lengthActionPerformed
-
-    private void rsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rsaActionPerformed
-        // TODO add your handling code here:
-         internal_state[5]=!internal_state[5];
-    }//GEN-LAST:event_rsaActionPerformed
-
-    private void shiftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shiftActionPerformed
-        // TODO add your handling code here:
-         internal_state[6]=!internal_state[6];
-    }//GEN-LAST:event_shiftActionPerformed
-
-    private void signatureRSAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signatureRSAActionPerformed
-        // TODO add your handling code here:
-         internal_state[9]=!internal_state[9];
-    }//GEN-LAST:event_signatureRSAActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

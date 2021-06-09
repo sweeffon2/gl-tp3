@@ -10,7 +10,7 @@ import org.emp.gl.messages.IMessage;
 
 /**
  *
- * @author younes
+ * @author ali
  */
 public class NoSpecialCharacter extends Filtre {
     
