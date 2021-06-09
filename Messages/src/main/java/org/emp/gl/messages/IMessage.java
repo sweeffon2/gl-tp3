@@ -23,5 +23,5 @@ public interface IMessage {
 
     void setMessage(String message);
     
-
+    public String toString() ;
 }
